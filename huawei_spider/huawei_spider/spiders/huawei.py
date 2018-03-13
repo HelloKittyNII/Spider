@@ -1,14 +1,13 @@
 
-from appstore.items import AppstoreItem
+
 from scrapy.spiders.crawl import Rule, CrawlSpider
 from scrapy.linkextractors import LinkExtractor
-import sys
-import io
 
-# sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='gb18030')
+from huawei_spider.items import HuaweiSpiderItem
+
 
 class AppStoreSpider(CrawlSpider):
-    name = 'appstore'
+    name = 'huawei'
 
     allowed_domains = ["app.hicloud.com"]
     start_urls =['http://app.hicloud.com/']
@@ -17,11 +16,13 @@ class AppStoreSpider(CrawlSpider):
     ]
 
     def parse_items(self,response):
-        item = AppstoreItem()
+        item = HuaweiSpiderItem()
 
-        name = response.xpath("//p/span[@class='title']").extract()
+        item['appName'] = response.xpath("//p/span[@class='title']/text()").extract()
+        item['appDesc'] = response.xpath("//div[@id='app_strdesc']/text()").extract()
+        item['url'] = response.url
 
-        # print ''.join(name).decode('utf-8')
+
 
         yield item
 

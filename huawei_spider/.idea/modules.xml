@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/appstore.iml" filepath="$PROJECT_DIR$/.idea/appstore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/huawei_spider.iml" filepath="$PROJECT_DIR$/.idea/huawei_spider.iml" />
     </modules>
   </component>
 </project>

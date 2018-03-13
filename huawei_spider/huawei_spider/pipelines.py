@@ -4,14 +4,18 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
+
 import json
 
-class ApkParsePipeline(object):
+class HuaweiSpiderPipeline(object):
+    def process_item(self, item, spider):
+        return item
+
     def __init__(self):
-        self.filename = open("apk.json", "w")
+        self.filename = open("huawei.json", "w")
 
     def process_item(self, item, spider):
-        text = json.dumps(dict(item), ensure_ascii=False) + ",\n"
+        text = json.dumps(dict(item), ensure_ascii = False) + ",\n"
         self.filename.write(text.encode("utf-8"))
         return item
 

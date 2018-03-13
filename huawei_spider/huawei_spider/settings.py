@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for apk_parse project
+# Scrapy settings for huawei_spider project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,14 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'apk_parse'
+BOT_NAME = 'huawei_spider'
 
-SPIDER_MODULES = ['apk_parse.spiders']
-NEWSPIDER_MODULE = 'apk_parse.spiders'
+SPIDER_MODULES = ['huawei_spider.spiders']
+NEWSPIDER_MODULE = 'huawei_spider.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'apk_parse (+http://www.yourdomain.com)'
+#USER_AGENT = 'huawei_spider (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -40,20 +40,20 @@ ROBOTSTXT_OBEY = True
 
 # Override the default request headers:
 DEFAULT_REQUEST_HEADERS = {
-   "User-Agent" : "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0;",
+  "User-Agent" : "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0;",
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
 }
 
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'apk_parse.middlewares.ApkParseSpiderMiddleware': 543,
+#    'huawei_spider.middlewares.HuaweiSpiderSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'apk_parse.middlewares.ApkParseDownloaderMiddleware': 543,
+#    'huawei_spider.middlewares.HuaweiSpiderDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -65,7 +65,7 @@ DEFAULT_REQUEST_HEADERS = {
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'apk_parse.pipelines.ApkParsePipeline': 300,
+   'huawei_spider.pipelines.HuaweiSpiderPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
